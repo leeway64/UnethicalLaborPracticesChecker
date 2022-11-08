@@ -1,0 +1,7 @@
+# User input file. Entries should be separated by a newline.
+Apple
+Microsoft
+Samsung
+Facebook
+Amazon
+Google
