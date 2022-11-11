@@ -1,13 +1,7 @@
-function read_companies_file()
-    # read list of companies that use forced labor
-    # return list
-end
+# Checks if a company takes advantage of forced labor from East Turkistan and prints out a list of
+# guilty companies.
 
-function print_companies(companies_list)
 
-end
+if abspath(PROGRAM_FILE) == @__FILE__
 
-function check_for_unethical_labor(company)
-    # if company in list of companies that use forced labor, return true
-    return true
 end
