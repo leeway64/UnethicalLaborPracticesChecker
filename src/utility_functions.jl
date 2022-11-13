@@ -4,8 +4,10 @@
 Read the file containing companies that take advantage of forced labor from East Turkistan and
 return the contents of that file as an array.
 """
-function read_companies_file(companies_file_path)
+function read_companies_file()
+    companies_file_path = "../doc/unethical-labor-companies-list.txt"
     companies = readlines(companies_file_path)
+
     return companies
 end
 

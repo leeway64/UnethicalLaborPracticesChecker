@@ -1,5 +1,11 @@
 # UnethicalLaborPracticesChecker
 
+
+```text
+
+```
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/UnethicalLaborPracticesChecker)
 
@@ -12,6 +18,7 @@ conducted primarily by the [Australian Strategic Policy Institute](https://www.a
 
 ```bash
 git clone https://github.com/leeway64/UnethicalLaborPracticesChecker.git
+bash build/create-venv.sh
 ```
 
 ## Usage
@@ -27,13 +34,18 @@ Amazon
 Google
 ```
 
-Then, run the following command:
-
+Serialize the input into MessagePack format:
 ```bash
-run/UnethicalLaborPracticesChecker.sh | jq '.'
+python lib/serialize_input.py
 ```
 
-The previous command will print out a JSON containing whether or not each company in the input
+Then, run UnethicalLaborPracticesChecker:
+```bash
+julia src/UnethicalLaborPracticesChecker.jl | jq '.'
+```
+
+The UnethicalLaborPracticesChecker will print out a JSON containing whether each company in the
+input uses forced labor from East Turkstan.
 
 ```json
 
@@ -41,10 +53,9 @@ The previous command will print out a JSON containing whether or not each compan
 
 ## Unit Tests
 
-To run unit tests, run the following commands:
-
+To run unit tests, run the following command:
 ```
-julia
+julia test/test-suite.jl
 ```
 
 
