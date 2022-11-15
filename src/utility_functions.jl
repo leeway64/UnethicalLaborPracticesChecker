@@ -1,5 +1,9 @@
 # Utility functions for UnethicalLaborPracticesChecker
 
+using JSON
+using DataStructures
+
+
 """
 Read the file containing companies that take advantage of forced labor from East Turkistan and
 return the contents of that file as an array.
@@ -7,7 +11,6 @@ return the contents of that file as an array.
 function read_companies_file()
     companies_file_path = "doc/unethical-labor-companies-list.txt"
     companies = readlines(companies_file_path)
-    
     companies = [company for company in companies if !startswith(lstrip(company), "#")]
     
     return companies
@@ -34,10 +37,10 @@ function print_companies(companies_list)
     |  __| / _` / __| __|    | | | | | '__| |/ / / __| __/ _` | '_ \ 
     | |___| (_| \__ \ |_     | | |_| | |  |   <| \__ \ || (_| | | | |
     |______\__,_|___/\__|    |_|\__,_|_|  |_|\_\_|___/\__\__,_|_| |_|
-    
     """
     
     println(free_east_turkistan)
+    
     
     companies_per_line = 5
     print("\t")
@@ -47,13 +50,11 @@ function print_companies(companies_list)
         else
             print("$company")
         end
-        #println(index % companies_per_line)
         if (index - 1) % companies_per_line == companies_per_line - 1
             println()
             print("\t")
         end
     end
-    
     println()
 end
 
@@ -61,8 +62,25 @@ end
 """
 
 """
-function check_for_unethical_labor(input_companies, companies_list)
-    # if company in list of companies that use forced labor, return true
+function check_for_unethical_labor(input_companies, companies_list)   
+    unethical_labor_results = DataStructures.OrderedDict()
+    for company in input_companies
+        unethical_labor_results[company] = company in companies_list
+    end
     
-    return true
+    return unethical_labor_results
+end
+
+
+"""
+"""
+function to_json(unethical_labor_results_dict)
+    
+end
+
+
+"""
+"""
+function deserialize_input()
+
 end
