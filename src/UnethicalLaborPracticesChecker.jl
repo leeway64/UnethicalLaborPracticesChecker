@@ -6,7 +6,10 @@ include("utility_functions.jl")
 
 if abspath(PROGRAM_FILE) == @__FILE__
     companies = read_companies_file()
-    print_companies(companies)
-    print(check_for_unethical_labor(["Apple", "Microsoft"], companies))
-    print()
+    #print_companies(companies)
+    
+    results = check_for_unethical_labor(["Apple", "Microsoft"], companies)
+    
+    #println(results)
+    println(to_json(results))
 end

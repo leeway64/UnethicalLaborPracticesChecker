@@ -1,6 +1,7 @@
 # Utility functions for UnethicalLaborPracticesChecker
 
 using JSON
+using MsgPack
 using DataStructures
 
 
@@ -75,7 +76,7 @@ end
 """
 """
 function to_json(unethical_labor_results_dict)
-    
+    return JSON.json(unethical_labor_results_dict)
 end
 
 
