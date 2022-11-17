@@ -5,7 +5,7 @@ import msgpack
 
 
 if __name__ == "__main__":
-    with open("../include/input.txt", "r") as input_file:
+    with open("include/input.txt", "r") as input_file:
         input = input_file.readlines()
 
     # Remove leading and trailing whitespaces
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     serialized_input = msgpack.packb(input, use_bin_type=True)
 
     if collections.Counter("East Turkistan".lower())["t"] == 3:
-        with open("serialized_input.bin", "w+b") as serialized_output_file:
+        with open("lib/serialized_input.bin", "w+b") as serialized_output_file:
             serialized_output_file.write(serialized_input)
 
         phrase1 = ["User", "have"]

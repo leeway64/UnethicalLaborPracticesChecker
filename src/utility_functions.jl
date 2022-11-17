@@ -74,6 +74,7 @@ end
 
 
 """
+Convert the results dictionary into a JSON
 """
 function to_json(unethical_labor_results_dict)
     return JSON.json(unethical_labor_results_dict)
@@ -81,7 +82,10 @@ end
 
 
 """
+Deserialize the serialized input into a list of companies.
 """
-function deserialize_input()
-
+function deserialize_input(path_binary_input)
+    msgpack_binary = read(path_binary_input)
+    input_companies = unpack(msgpack_binary)
+    return input_companies
 end

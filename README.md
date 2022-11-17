@@ -30,10 +30,12 @@ conducted primarily by the [Australian Strategic Policy Institute](https://www.a
 
 ```bash
 git clone https://github.com/leeway64/UnethicalLaborPracticesChecker.git
-bash build/create-venv.sh
+source build/create-venv.sh
 ```
 
+
 ## Usage
+
 All user input is entered into [input.txt](include/input.txt). Let's assume that your input.txt file looks like this:
 
 ```text
@@ -49,7 +51,7 @@ Google
 Serialize the input into MessagePack format:
 
 ```bash
-python lib/serialize_input.py
+python3 lib/serialize_input.py
 ```
 
 Then, run UnethicalLaborPracticesChecker:

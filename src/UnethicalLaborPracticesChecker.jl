@@ -6,10 +6,13 @@ include("utility_functions.jl")
 
 if abspath(PROGRAM_FILE) == @__FILE__
     companies = read_companies_file()
-    #print_companies(companies)
+
+    if false
+        print_companies(companies)
+    end
+
+    input_companies = deserialize_input("lib/serialized_input.bin")
+    labor_results = check_for_unethical_labor(input_companies, companies)
     
-    results = check_for_unethical_labor(["Apple", "Microsoft"], companies)
-    
-    #println(results)
-    println(to_json(results))
+    println(to_json(labor_results))
 end
