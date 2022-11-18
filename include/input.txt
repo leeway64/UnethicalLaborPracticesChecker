@@ -5,3 +5,7 @@ Samsung
 Facebook
 Amazon
 Google
+Huawei
+Nintendo
+ZTE
+Xiaomi

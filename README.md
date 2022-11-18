@@ -33,6 +33,8 @@ git clone https://github.com/leeway64/UnethicalLaborPracticesChecker.git
 source build/create-venv.sh
 ```
 
+Using source instead of bash activates the virtual environment in the current active shell. 
+
 
 ## Usage
 
@@ -60,7 +62,9 @@ Then, run UnethicalLaborPracticesChecker:
 julia src/UnethicalLaborPracticesChecker.jl | jq '.'
 ```
 
-The UnethicalLaborPracticesChecker will print out a JSON containing whether each company in the
+`jq '.'` pretty-prints the input JSON without changing its contents.
+
+UnethicalLaborPracticesChecker will print out a JSON containing whether each company in the
 input uses forced labor from East Turkstan.
 
 ```json
@@ -76,7 +80,7 @@ to install jq for your particular Linux distro.
 To run unit tests, run the following command:
 
 ```bash
-julia test/test-suite.jl
+julia test/test_suite.jl
 ```
 
 
@@ -90,7 +94,15 @@ julia
 ```
 
 Alternatively, to view the list of companies, you can also view
-[unethical-labor-companies.txt](doc/unethical-labor-companies.txt).
+[unethical-labor-companies.txt](doc/unethical-labor-companies-list.txt).
+
+
+## Further Reading
+
+To support a free and independent East Turkistan, check out the following resources:
+
+- [East Turkistan Government-in-Exile](https://east-turkistan.net/)
+- [Uyghur Human Rights Project](https://uhrp.org/)
 
 
 ## Third-Party Tools

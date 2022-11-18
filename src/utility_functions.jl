@@ -63,10 +63,11 @@ end
 """
 
 """
-function check_for_unethical_labor(input_companies, companies_list)   
+function check_for_unethical_labor(input_companies, companies_list)
+    companies_list_set = Set(companies_list)
     unethical_labor_results = DataStructures.OrderedDict()
     for company in input_companies
-        unethical_labor_results[company] = company in companies_list
+        unethical_labor_results[company] = company in companies_list_set
     end
     
     return unethical_labor_results
