@@ -4,6 +4,7 @@
 include("utility_functions.jl")
 
 
+# Similar to if __name__ == "__main__" in Python
 if abspath(PROGRAM_FILE) == @__FILE__
     companies = read_companies_file()
 

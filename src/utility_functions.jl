@@ -61,13 +61,17 @@ end
 
 
 """
-
+Check if the companies in the input list take advantage of forced labor.
 """
+# TODO figure out syntax for dictionary comprehensions and tolower
 function check_for_unethical_labor(input_companies, companies_list)
-    companies_list_set = Set(companies_list)
+    lowercase_to_original_case_dict = {company.tolower(): company for company in companies_list}
+
+    input_companies_tolower = [company.tolower() for company in input_companies]
+    companies_list_set = Set(input_companies_tolower)
     unethical_labor_results = DataStructures.OrderedDict()
     for company in input_companies
-        unethical_labor_results[company] = company in companies_list_set
+        unethical_labor_results[lowercase_to_original_case_dict[company.tolower()] = company.tolower() in companies_list_set
     end
     
     return unethical_labor_results
@@ -75,7 +79,7 @@ end
 
 
 """
-Convert the results dictionary into a JSON
+Convert the results dictionary into a JSON.
 """
 function to_json(unethical_labor_results_dict)
     return JSON.json(unethical_labor_results_dict)

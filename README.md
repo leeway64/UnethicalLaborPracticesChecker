@@ -48,6 +48,19 @@ Samsung
 Facebook
 Amazon
 Google
+Huawei
+Nintendo
+ZTE
+Xiaomi
+Toshiba
+Uniqlo
+Japan Display Inc.
+Oppo
+Tsinghua Tongfang
+Mitsubishi
+Lenovo
+LG
+Tesla
 ```
 
 Serialize the input into MessagePack format:
@@ -59,7 +72,7 @@ python3 lib/serialize_input.py
 Then, run UnethicalLaborPracticesChecker:
 
 ```bash
-julia src/UnethicalLaborPracticesChecker.jl | jq '.'
+julia project=. src/UnethicalLaborPracticesChecker.jl | jq '.'
 ```
 
 `jq '.'` pretty-prints the input JSON without changing its contents.
@@ -90,7 +103,7 @@ To print the project header ("Freedom for East Turkistan") and also to print out
 who use forced labor from East Turkistan, run:
 
 ```bash
-julia
+julia project=. 
 ```
 
 Alternatively, to view the list of companies, you can also view
@@ -108,6 +121,9 @@ To support a free and independent East Turkistan, check out the following resour
 ## Third-Party Tools
 
 - [msgpack](https://pypi.org/project/msgpack/) (Apache Software License (Apache 2.0)): Python
-library for writing and reading [MessagePack](https://msgpack.org/).
+library for writing and reading [MessagePack](https://msgpack.org/) messages.
 - [jq](https://stedolan.github.io/jq/) (MIT License): Command-line JSON processor.
+- [MsgPack]() (): Julia library for writing and reading  [MessagePack](https://msgpack.org/) messages
+- [JSON]() (): Julia library for reading and writing JSON
+- [DataStructures]() (): 
 - [ASCII Generator](http://www.network-science.de/ascii/): ASCII generator used to create the project header.
