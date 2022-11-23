@@ -63,17 +63,22 @@ end
 """
 Check if the companies in the input list take advantage of forced labor.
 """
-# TODO figure out syntax for dictionary comprehensions and tolower
 function check_for_unethical_labor(input_companies, companies_list)
-    lowercase_to_original_case_dict = {company.tolower(): company for company in companies_list}
-
-    input_companies_tolower = [company.tolower() for company in input_companies]
-    companies_list_set = Set(input_companies_tolower)
-    unethical_labor_results = DataStructures.OrderedDict()
-    for company in input_companies
-        unethical_labor_results[lowercase_to_original_case_dict[company.tolower()] = company.tolower() in companies_list_set
-    end
+    lowercase_to_original_case_companies_list_dict = Dict(lowercase(company) => company for company in companies_list)
+    lowercase_to_original_case_input_companies_dict = Dict(lowercase(company) => company for company in input_companies)
     
+    companies_list_set = Set(lowercase(company) for company in companies_list)
+    
+    unethical_labor_results = DataStructures.OrderedDict()
+    input_companies_lowercase = [lowercase(company) for company in input_companies]
+    for company in input_companies_lowercase
+        if company in companies_list_set
+            unethical_labor_results[lowercase_to_original_case_companies_list_dict[company]] = true
+        else
+            unethical_labor_results[lowercase_to_original_case_input_companies_dict[company]] = false            
+        end
+    end
+
     return unethical_labor_results
 end
 
