@@ -42,12 +42,14 @@ function print_companies(companies_list)
     
     println(free_east_turkistan)
     
+    println("The following companies, according to the Australian Strategic Policy Institute,")
+    println("use forced Uyghur labor:\n")
     
     companies_per_line = 5
     print("\t")
     for (index, company) in enumerate(companies_list)
         if index != length(companies_list)
-            print("$company,")
+            print("$company, ")
         else
             print("$company")
         end
