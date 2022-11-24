@@ -30,6 +30,7 @@ conducted primarily by the [Australian Strategic Policy Institute](https://www.a
 
 ```bash
 git clone https://github.com/leeway64/UnethicalLaborPracticesChecker.git
+cd UnethicalLaborPracticesChecker
 source build/create-venv.sh
 ```
 
@@ -72,7 +73,7 @@ python3 lib/serialize_input.py
 Then, run UnethicalLaborPracticesChecker:
 
 ```bash
-julia project=. src/UnethicalLaborPracticesChecker.jl | jq '.'
+julia --project=. src/UnethicalLaborPracticesChecker.jl | jq '.'
 ```
 
 `jq '.'` pretty-prints the input JSON without changing its contents.
@@ -81,7 +82,27 @@ UnethicalLaborPracticesChecker will print out a JSON containing whether each com
 input uses forced labor from East Turkstan.
 
 ```json
-
+{
+  "Apple": true,
+  "Microsoft": true,
+  "Samsung": true,
+  "Facebook": false,
+  "Amazon": true,
+  "Google": true,
+  "Huawei": true,
+  "Nintendo": true,
+  "ZTE": true,
+  "Xiaomi": true,
+  "Toshiba": true,
+  "Uniqlo": true,
+  "Japan Display Inc.": true,
+  "Oppo": true,
+  "Tsinghua Tongfang": true,
+  "Mitsubishi": true,
+  "Lenovo": true,
+  "LG": true,
+  "Tesla": false
+}
 ```
 
 Refer to [jq's downloads page](https://stedolan.github.io/jq/download/) for more information on how
@@ -93,7 +114,7 @@ to install jq for your particular Linux distro.
 To run unit tests, run the following command:
 
 ```bash
-julia test/test_suite.jl
+julia --project=. test/test_suite.jl
 ```
 
 
@@ -103,7 +124,7 @@ To print the project header ("Freedom for East Turkistan") and also to print out
 who use forced labor from East Turkistan, run:
 
 ```bash
-julia project=. 
+julia --project=. src/UnethicalLaborPracticesChecker.jl print-companies
 ```
 
 Alternatively, to view the list of companies, you can also view
@@ -123,7 +144,11 @@ To support a free and independent East Turkistan, check out the following resour
 - [msgpack](https://pypi.org/project/msgpack/) (Apache Software License (Apache 2.0)): Python
 library for writing and reading [MessagePack](https://msgpack.org/) messages.
 - [jq](https://stedolan.github.io/jq/) (MIT License): Command-line JSON processor.
-- [MsgPack]() (): Julia library for writing and reading  [MessagePack](https://msgpack.org/) messages
-- [JSON]() (): Julia library for reading and writing JSON
-- [DataStructures]() (): 
-- [ASCII Generator](http://www.network-science.de/ascii/): ASCII generator used to create the project header.
+- [MsgPack](https://github.com/JuliaIO/MsgPack.jl) (MIT Expat License): Julia library for writing
+and reading  [MessagePack](https://msgpack.org/) messages.
+- [JSON](https://github.com/JuliaIO/JSON.jl) (MIT Expat License): Julia library for reading and
+writing JSON.
+- [DataStructures](https://github.com/JuliaCollections/DataStructures.jl) (MIT License):
+Collection of data structures for Julia.
+- [ASCII Generator](http://www.network-science.de/ascii/): ASCII generator used to create the
+project header.

@@ -15,7 +15,6 @@ if abspath(PROGRAM_FILE) == @__FILE__
     elseif length(ARGS) == 1 && ARGS[1] == "print-companies"
         print_companies(companies)
     else
-
         input_companies = deserialize_input("lib/serialized_input.bin")
         labor_results = check_for_unethical_labor(input_companies, companies)
 
