@@ -6,7 +6,7 @@ include("utility_functions.jl")
 
 # Similar to if __name__ == "__main__" in Python
 if abspath(PROGRAM_FILE) == @__FILE__
-    companies = read_companies_file()
+    companies = read_companies_file("doc/unethical-labor-companies-list.txt")
     
     if length(ARGS) > 1
         println("Too many arguments. Either enter \"print-companies\" as an argument or no arguments.")

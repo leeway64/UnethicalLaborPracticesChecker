@@ -42,7 +42,7 @@ Using source instead of bash activates the virtual environment in the current ac
 All user input is entered into [input.txt](include/input.txt). Let's assume that your input.txt file looks like this:
 
 ```text
-# User input file. Entries should be separated by a newline.
+# User input file. Entries should be separated by a new line.
 Apple
 Microsoft
 Samsung
@@ -112,7 +112,6 @@ to install jq for your particular Linux distro.
 ## Unit Tests
 
 To run unit tests, run the following command:
-
 ```bash
 julia --project=. test/test_suite.jl
 ```
@@ -120,8 +119,8 @@ julia --project=. test/test_suite.jl
 
 ## Printing the project header and viewing the companies list
 
-To print the project header ("Freedom for East Turkistan") and also to print out a list of companies
-who use forced labor from East Turkistan, run:
+To print the project header ("Freedom for East Turkistan") and also a list of companies who use
+forced labor from East Turkistan, run:
 
 ```bash
 julia --project=. src/UnethicalLaborPracticesChecker.jl print-companies
@@ -137,6 +136,7 @@ To support a free and independent East Turkistan, check out the following resour
 
 - [East Turkistan Government-in-Exile](https://east-turkistan.net/)
 - [Uyghur Human Rights Project](https://uhrp.org/)
+- 
 
 
 ## Third-Party Tools
