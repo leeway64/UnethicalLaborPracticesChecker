@@ -4,7 +4,7 @@ include("../src/utility_functions.jl")
 
 
 @testset "check_for_unethical_labor" begin
-    companies_list = read_companies_file()
+    companies_list = read_companies_file("doc/unethical-labor-companies-list.txt")
     @testset "Empty list" begin
         dict1 = check_for_unethical_labor([], companies_list)
         

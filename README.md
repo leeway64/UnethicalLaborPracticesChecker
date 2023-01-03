@@ -139,7 +139,8 @@ To support a free and independent East Turkistan, check out the following resour
 
 - [East Turkistan Government-in-Exile](https://east-turkistan.net/)
 - [Uyghur Human Rights Project](https://uhrp.org/)
-- 
+- ["Uyghurs for sale"](https://www.aspi.org.au/report/uyghurs-sale), a report by the
+[Australian Strategic Policy Institute](https://www.aspi.org.au/), on Uyghur forced labor.
 
 
 ## Third-Party Tools
