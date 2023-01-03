@@ -12,7 +12,7 @@ companies_file_path: Path to the companies file (a text file, with each company 
 """
 function read_companies_file(companies_file_path)
     companies = readlines(companies_file_path)
-    companies = [company for company in companies if !startswith(lstrip(company), "#")]
+    companies = [company for company in companies if !startswith(lstrip(company), "#") && !startswith(lstrip(company), "\n")]
     
     return companies
 end

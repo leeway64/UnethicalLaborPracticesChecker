@@ -151,4 +151,4 @@ writing JSON.
 - [DataStructures](https://github.com/JuliaCollections/DataStructures.jl) (MIT License):
 Collection of data structures for Julia.
 - [ASCII Generator](http://www.network-science.de/ascii/): ASCII generator used to create the
-project header.
+project header; the font used in the header is the "big" font.
