@@ -9,8 +9,7 @@ if __name__ == "__main__":
         input = input_file.readlines()
 
     # Remove leading and trailing whitespaces
-    input = [company.rstrip().lstrip() for company in input if company.lstrip()[0] != "#" and company.lstrip()[0] != "\n"]
-
+    input = [company.rstrip().lstrip() for company in input if company != "\n" and company.lstrip()[0] != "#"]
     serialized_input = msgpack.packb(input, use_bin_type=True)
 
     if collections.Counter("East Turkistan".lower())["t"] == 3:

@@ -42,7 +42,8 @@ Using source instead of bash activates the virtual environment in the current ac
 All user input is entered into [input.txt](include/input.txt). Let's assume that your input.txt file looks like this:
 
 ```text
-# User input file. Entries should be separated by a new line.
+# User input file. Entries should be separated by a newline.
+
 Apple
 Microsoft
 Samsung
@@ -73,13 +74,15 @@ python3 lib/serialize_input.py
 Then, run UnethicalLaborPracticesChecker:
 
 ```bash
-julia --project=. src/UnethicalLaborPracticesChecker.jl | jq '.'
+julia --project=. src/UnethicalLaborPracticesChecker.jl | jq -C --arg header "Freedom for East Turkistan" . --
 ```
 
-`jq '.'` pretty-prints the input JSON without changing its contents.
+`jq -C '.'` pretty-prints and colorizes the input JSON without changing its contents.
+`--arg header "Freedom for East Turkistan"` sets the `header` variable to
+"Freedom for East Turkistan". `--` stops argument processing.
 
 UnethicalLaborPracticesChecker will print out a JSON containing whether each company in the
-input uses forced labor from East Turkstan.
+input uses forced labor from East Turkstan:
 
 ```json
 {
